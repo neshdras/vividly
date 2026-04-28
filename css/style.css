@@ -14,6 +14,7 @@
 
 *{
     margin: 0;
+    font-family: var(--textfont);
 }
 
 a{
@@ -25,6 +26,11 @@ a{
         font-family: var(--logofont);
         font-weight: 400;
         font-size: 30px;
+}
+
+.subtitle{
+    font-size: 24px;
+    font-weight: 700;
 }
 /* CSS Mobile width  between 320px and 768px */
 
@@ -49,13 +55,21 @@ header{
 main{
     .section1{
         background-color: var(--yellow);
-        padding: 20px 0;
+        padding: 40px 0;
         article{
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             gap: 20px;
+            h2{
+                font-size: 24px;
+                font-weight: 700;
+            }
+            p{
+                font-size: 15px;
+                font-weight: 300;
+            }
             form{
                 display: flex;
                 flex-direction: column;
@@ -66,20 +80,63 @@ main{
                    background-color: var(--yellow);
                    border: none;
                    box-shadow: 0px 4px 15px 0px #00000026;
+                   border-radius: 16px;
+                   padding: 10px 6px;
                    ::placeholder{
                     color: var(--lightblack);
+                    font-family: var(--titlefont);
                    }
                 }
                 #search{
                     width: 126px;
                     box-shadow: 0px 4px 4px 0px #00000040;
                     border: none;
-                    background-color: linear-gradient(#FF7800, var(--yellow));
+                    background-image: var(--gradient);
                     padding: 10px 6px;
+                    border-radius: 16px;
+                    font-weight: 500;
                 }
             }
         }
 
+    }
+    .section2{
+        padding: 20px 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        ol{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            counter-reset: step;
+            padding: 0;
+            list-style-type: none;
+            li{
+                box-shadow: 0px 4px 15px 0px #00000026;
+                border-radius: 16px;
+                padding: 20px 0;
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                font-weight: 500;
+            }
+            li::before{
+                content: counter(step);
+                counter-increment: step;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--orange);
+                color: var(--white);
+                font-size: 16px;
+                border-radius: 50%;
+                margin-right: 10px;
+                flex-shrink: 0;
+            }
+        }
     }
 }
 
