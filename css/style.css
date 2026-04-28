@@ -15,6 +15,7 @@
 *{
     margin: 0;
     font-family: var(--textfont);
+    color: var(--lightblack);
 }
 
 a{
@@ -22,7 +23,7 @@ a{
 }
 
 .logo{
-        color: var(--lightblack);
+        /* color: var(--lightblack); */
         font-family: var(--logofont);
         font-weight: 400;
         font-size: 30px;
@@ -41,6 +42,7 @@ a{
     padding: 10px 6px;
     border-radius: 16px;
     font-weight: 500;
+    color: var(--black);
                 
 }
 /* CSS Mobile width  between 320px and 768px */
@@ -94,7 +96,7 @@ main{
                    border-radius: 16px;
                    padding: 10px 6px;
                    ::placeholder{
-                    color: var(--lightblack);
+                    /* color: var(--lightblack); */
                     font-family: var(--titlefont);
                    }
                 }
@@ -104,7 +106,7 @@ main{
 
     }
     .section2{
-        padding: 20px 5px;
+        padding: 20px 10px;
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -123,12 +125,17 @@ main{
                 align-items: center;
                 margin-bottom: 10px;
                 font-weight: 500;
+                color: var(--black);
+                position: relative;
+                padding-left: 26px;
             }
             li::before{
+                position: absolute;
+                left: -8px;
                 content: counter(step);
                 counter-increment: step;
-                width: 30px;
-                height: 30px;
+                width: 25px;
+                height: 25px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -144,12 +151,19 @@ main{
     .section3{
         background-color: var(--yellow);
         padding: 40px 12px;
+        display: grid;
+        gap: 20px;
+
         .all-pro{
             display: grid;
             gap: 20px;
-
             .professionnal{
-                article{
+                background-color: var(--white);
+                border-radius: 20px;
+                padding-bottom: 10px;
+                position: relative;
+                a{
+                    /* color: var(--lightblack); */
                     border-radius: 20px;
                     background-color: var(--white);
                     img{
@@ -160,20 +174,66 @@ main{
                     }
                     
                     div{
-                        padding: 10px;
                         display: flex;
                         flex-direction: column;
-                        form{
-                            display: flex;
-                            padding-top: 10px;
-                            justify-content: space-between;
+                        padding: 0 10px;
+                        padding-top: 10px;
+                        p{
+                            padding-bottom: 10px;
+                            font-weight: 300;
                         }
+                    }
+    
+                }
+    
+                form{
+                    margin: 0 10px;
+                    padding-top: 10px;
+                    border-top: 1px solid var(--orange);
+                    label{
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 15px;
+                        font-weight: 300;
+                        cursor: pointer;
+                        caret-color: transparent;
+                    }
+                    input{
+                        appearance: none;
+                    }
+                    img{
+                        width: 18px;
+                    }
+                    .img-checked{
+                        display: none;
+                    }
+                    input:checked ~ .img-unchecked{
+                        display: none;
+                    }
+                    input:checked ~ .img-checked{
+                        display: inline;
                     }
                 }
             }
+            .professionnal:nth-child(-n+2)::before{
+                content: "New !";
+                z-index: 1;
+                position: absolute;
+                left: -10px;
+                top: 14px;
+                background-color: var(--orange);
+                font-family: var(--logofont);
+                color: var(--white);
+                padding: 6px 13px;
+                rotate: -45deg;
+            }
+        }
 
+        button{
+            justify-self: center;
         }
     }
+    
 }
 
 footer{
