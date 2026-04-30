@@ -70,6 +70,14 @@ a{
         font-weight: 300;
         cursor: pointer;
         caret-color: transparent;
+        &:hover .img-unchecked{
+            display: none;
+            transition: ease-in-out 1s;
+        }
+        &:hover .img-checked{
+            display: inline;
+            transition: ease-in-out 1s;
+        }
     }
     input{
         appearance: none;
