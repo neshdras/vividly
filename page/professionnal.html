@@ -65,15 +65,17 @@
                 <input type="text" placeholder="Your name">
                 <input type="email" placeholder="Your email">
                 <input type="tel" placeholder="Your phone">
-                <textarea name="" id="" placeholder="Your message"></textarea>
-                <label for="checkbox">I accept the politic of confidentiality</label>
-                <input type="checkbox" name="checkbox" id="checkbox">
+                <textarea name="" id="" placeholder="Your message" cols="10" rows="9"></textarea>
+                <label for="checkbox">
+                    <input type="checkbox" name="checkbox" id="checkbox" required>
+                    I accept the politic of confidentiality
+                </label>
                 <button type="submit" class="btn-orange">Send</button>
             </form>
         </section>
     </main>
     <footer>
-        <h2 class="logo">Foody</h2>
+        <h2 class="logo">Vividly</h2>
         <nav>
             <ul>
                 <li><a href="#">Suggest a professional</a></li>
@@ -83,5 +85,8 @@
             </ul>
         </nav>
     </footer>
+    <div class="container-loader">
+        <div class="loader"></div>
+    </div>
 </body>
 </html>
